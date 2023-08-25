@@ -1,0 +1,153 @@
+﻿<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script src="path/to/your/main.js"></script> 
+
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <div class="col-md-6 d-flex align-items-center">
+                    <p class="mb-0 phone pl-md-2">
+                        <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span></a>
+                        <a href="#"><span class="fa fa-paper-plane mr-1"></span> <span class="__cf_email__" data-cfemail="bac3d5cfc8dfd7dbd3d6fadfd7dbd3d694d9d5d7"></span></a>
+                    </p>
+                </div>
+
+                <div class="col-md-6 d-flex justify-content-md-end">
+
+                    <div class="reg">
+                        <p class="mb-0"><a asp-controller="Account" asp-action="SignUp" class="mr-2">Sign Up</a> <a asp-controller="Account" asp-action="Login">Log In</a></p>
+                    </div>
+
+                </div>
+            }
+            else
+            {
+                <div class="col-md-6 d-flex align-items-center">
+                    <p class="mb-0 phone pl-md-2">
+                        <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a>
+                        <a href="#"><span class="fa fa-paper-plane mr-1"></span> <span class="__cf_email__" data-cfemail="bac3d5cfc8dfd7dbd3d6fadfd7dbd3d694d9d5d7">[email&#160;protected]</span></a>
+                    </p>
+                </div>
+
+                <div class="col-md-6 d-flex justify-content-md-end">
+
+                    <div class="reg">
+                        <p class="mb-0">
+                            <a href="#" class="mr-2">@User.Identity.Name</a>
+                            <a asp-controller="Account" asp-action="Logout">Logout</a>
+                        </p>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/Home">Liquor <span>store</span></a>
+        <div class="order-lg-last btn-group">
+            <a href="/Basket/Index" class="btn-cart dropdown-toggle dropdown-toggle-split"  aria-expanded="false">
+                <span class="flaticon-shopping-bag"></span>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="navigatinCustom nav-item"><a asp-controller="Home" asp-action="Index" class="nav-link">Home</a></li>
+                <li class="navigatinCustom nav-item"><a asp-controller="About" asp-action="Index" class="nav-link">About</a></li>
+                <li class="navigatinCustom nav-item"><a asp-controller="Products" asp-action="GetAllProducts" class="nav-link">Products</a></li>
+                <li class="navigatinCustom nav-item	"><a asp-controller="Blogs" asp-action="Index" class="nav-link">Blog</a></li>
+                <li class="navigatinCustom nav-item"><a asp-controller="Contact" asp-action="Index" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="~/assets/js/popper.min.js"></script>
+<script src="~/assets/js/bootstrap.min.js"></script>
+<script src="~/assets/js/jquery.easing.1.3.js"></script>
+<script src="~/assets/js/jquery.waypoints.min.js"></script>
+<script src="~/assets/js/jquery.stellar.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="~/assets/js/jquery.animateNumber.min.js"></script>
+<script src="~/assets/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&amp;sensor=false"></script>
+<script src="~/assets/js/google-map.js"></script>
+<script src="../../../cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script src="~/assets/js/main.js"></script>
+<script>
+    var currentUrl = window.location.pathname;
+
+    var navItems = document.querySelectorAll(".nav-item");
+
+    navItems.forEach(function (navItem) {
+        var linkUrl = navItem.querySelector(".nav-link").getAttribute("href");
+
+        if (currentUrl === linkUrl) {
+            navItems.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            navItem.classList.add("active");
+        }
+    });
+</script>
+
+<script>
+    
+
+    $(document).ready(function () {
+
+        var quantitiy = 0;
+        $('.quantity-right-plus').click(function (e) {
+
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = parseInt($('#quantity').val());
+
+            // If is not undefined
+
+            $('#quantity').val(quantity + 1);
+
+
+            // Increment
+
+        });
+
+        $('.quantity-left-minus').click(function (e) {
+            // Stop acting like a button
+            e.preventDefault();
+            // Get the field name
+            var quantity = pars     eInt($('#quantity').val());
+
+            // If is not undefined
+
+            // Increment
+            if (quantity > 0) {
+                $('#quantity').val(quantity - 1);
+            }
+        });
+
+    });
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7ed41ede5a4b6937","version":"2023.7.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}' crossorigin="anonymous"></script>
